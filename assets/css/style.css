@@ -703,8 +703,7 @@ a:hover{
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 0 0 1px rgba(144, 81, 227, 0.5), 0 0 0.5px 0.5px rgba(141, 53, 229, 0.336);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
-  max-width: 340px;
-  width: 100%;
+  width: 340px;
   height: auto;         /* ✅ Allow natural height */
   max-height: none;     /* ✅ Remove height limits */
   justify-content: center;
@@ -749,7 +748,6 @@ a:hover{
 #project-slider .owl-stage {
   display: flex;
   align-items: center; /* ✅ Center tiles vertically */
-  padding: 0 2rem;
   transform-style: preserve-3d;
   perspective: 1000px;
 }
@@ -762,50 +760,6 @@ a:hover{
 }
 
 /* Nav Arrows */
-#project-slider .owl-nav {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
-  z-index: 10;
-  pointer-events: none;
-}
-
-#project-slider .owl-prev,
-#project-slider .owl-next {
-  pointer-events: all;
-  background: linear-gradient(135deg, #12c2e9, #c471ed, #f64f59);
-  border-radius: 50%;
-  width: 42px;
-  height: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  color: white;
-  box-shadow: 0 0 12px rgba(144, 81, 227, 0.6);
-  transition: all 0.3s ease;
-}
-
-#project-slider .owl-prev:hover,
-#project-slider .owl-next:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 18px rgba(144, 81, 227, 0.9);
-}
-
-#project-slider .owl-prev {
-  position: absolute;
-  left: -4rem; /* adjust as needed */
-}
-
-#project-slider .owl-next {
-  position: absolute;
-  right: -4rem; /* adjust as needed */
-}
-
 
 #projects {
   padding: 100px 0 80px 0;
@@ -929,7 +883,8 @@ a:hover{
   display: flex;
   justify-content: space-between;
   transform: translateY(-50%);
-  padding: 0 8rem;
+  padding: 0 -10rem;
+  overflow: visible;
 }
 
 
@@ -953,48 +908,6 @@ a:hover{
 .project-controls button:hover {
   transform: scale(1.1);
   box-shadow: 0 0 18px rgba(144, 81, 227, 0.9);
-}
-
-
-/*--------------------------------------------------------------
-# Contact Section
---------------------------------------------------------------*/
-
-#contact{
-    padding: 100px 0;
-    min-height: 100vh;
-    background-size: contain;
-}
-
-.contact-form{
-    padding: 35px;
-    border-radius: 15px;
-    background-color: transparent;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 0 1px 0 rgba(144, 81, 227, .5), 0 0 0.5px 0.5px rgba(141, 53, 229, .336);
-    -webkit-box-shadow: 0 0 1px 0 rgba(144, 81, 227, .5), 0 0 0.5px 0.5px rgba(141, 53, 229, .336);
-}
-
-.contact-form .form-control{
-    padding: 0.775rem 1.05rem;
-    background-color: transparent;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-}
-
-.contact-form .form-control:focus{
-    box-shadow: none;
-    -webkit-box-shadow: none;
-    border-color: #850dd5;
-}
-
-.contact-form .btn{
-    background-color: #850dd5;
-}
-
-html, body {
-  overflow-x: hidden;
 }
 
 /*--------------------------------------------------------------
