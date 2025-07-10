@@ -52,24 +52,54 @@ function scrollToTop(){
     document.documentElement.scrollTop = 0;
 }
 
-//Testimonial Slider
+
 $(document).ready(function(){
-    $("#testimonial-slider").owlCarousel({
-        items:3,
-        nav:true,
-        loop: true,
-        autoplay: true,
-        autoplayTimeout: 3000,
-        responsive:{
-            0:{
-                items:1,
-            },
-            768:{
-                items:2,
-            },
-            1170:{
-                items:3,
-            }
-        }
+  const projectSlider = $("#project-slider");
+
+  // Initialize the carousel
+  projectSlider.owlCarousel({
+    items: 3,
+    loop: true,
+    center: true,
+    margin: 32,
+    nav: false, // nav false because you are using custom arrows
+    autoplay: true,
+    autoplayTimeout: 3000,
+    autoplayHoverPause: true,
+    responsive: {
+      0: { items: 1 },
+      768: { items: 2 },
+      992: { items: 3 }
+    }
+  });
+
+  // Rotation logic
+  projectSlider.on('changed.owl.carousel', function(event) {
+    $('.owl-item').removeClass('left-item right-item');
+
+    const center = event.item.index + Math.floor(event.page.size / 2);
+    $('.owl-item').each(function(index) {
+      if (index < center) {
+        $(this).addClass('left-item');
+      } else if (index > center) {
+        $(this).addClass('right-item');
+      }
     });
+  });
+
+  // ⛔ Stop autoplay on arrow click
+  $('.project-prev, .project-next').on('click', function() {
+    projectSlider.trigger('stop.owl.autoplay');
+    // Then move carousel
+    if ($(this).hasClass('project-prev')) {
+      projectSlider.trigger('prev.owl.carousel');
+    } else {
+      projectSlider.trigger('next.owl.carousel');
+    }
+  });
 });
+
+
+
+
+
