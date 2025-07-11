@@ -607,6 +607,13 @@ a:hover{
     font-size: 0.9rem;
 }
 
+.experience-logo {
+  width: 48px;
+  height: auto;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
 /*--------------------------------------------------------------
 # Projects Section
 --------------------------------------------------------------*/
