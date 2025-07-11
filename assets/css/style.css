@@ -179,18 +179,21 @@ a:hover{
     transform: translate(0, -0.25rem) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
 }
 
-.tertiary-bg-btn{
-    color: var(--text-color);
+.tertiary-bg-btn {
+    color: var(--btn-color);
     background-color: var(--tertiary-color);
     border: none;
-    transform: translate(0, -0.25rem) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+    transition: var(--transition-default);
+    -webkit-transition: var(--transition-default);
 }
 
-.tertiary-bg-btn:hover{
+.tertiary-bg-btn:hover {
     color: var(--bg-color);
     background-color: var(--text-color);
     border: 1px solid var(--bg-color);
+    transform: translate(0, -0.25rem);
 }
+
 
 .in-progress{
     text-wrap: nowrap;
