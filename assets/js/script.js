@@ -52,23 +52,25 @@ function scrollToTop(){
     document.documentElement.scrollTop = 0;
 }
 
-$(document).ready(function(){
+$(document).ready(function () {
   const projectSlider = $("#project-slider");
 
-  projectSlider.on('initialized.owl.carousel', function(event) {
-    const $items = $(this).find('.owl-item');
-    const centerIndex = $items.index($items.filter('.center'));
+  // Apply tilt classes on init
+  projectSlider.on("initialized.owl.carousel", function (event) {
+    const $items = $(this).find(".owl-item");
+    const centerIndex = $items.index($items.filter(".center"));
 
-    $items.removeClass('left-item right-item');
-    $items.each(function(i) {
+    $items.removeClass("left-item right-item");
+    $items.each(function (i) {
       if (i < centerIndex) {
-        $(this).addClass('left-item');
+        $(this).addClass("left-item");
       } else if (i > centerIndex) {
-        $(this).addClass('right-item');
+        $(this).addClass("right-item");
       }
     });
   });
 
+  // Initialize Owl Carousel
   projectSlider.owlCarousel({
     items: 3,
     loop: true,
@@ -85,26 +87,43 @@ $(document).ready(function(){
     }
   });
 
-  projectSlider.on('changed.owl.carousel', function(event) {
-    const $items = $(this).find('.owl-item');
+  // Apply tilt classes on slide change
+  projectSlider.on("changed.owl.carousel", function (event) {
+    const $items = $(this).find(".owl-item");
     const centerIndex = event.item.index + Math.floor(event.page.size / 2);
 
-    $items.removeClass('left-item right-item');
-    $items.each(function(index) {
+    $items.removeClass("left-item right-item");
+    $items.each(function (index) {
       if (index < centerIndex) {
-        $(this).addClass('left-item');
+        $(this).addClass("left-item");
       } else if (index > centerIndex) {
-        $(this).addClass('right-item');
+        $(this).addClass("right-item");
       }
     });
   });
 
-  $('.project-prev, .project-next').on('click', function() {
-    projectSlider.trigger('stop.owl.autoplay');
-    if ($(this).hasClass('project-prev')) {
-      projectSlider.trigger('prev.owl.carousel');
+  // Stop autoplay if arrow is clicked inside center tile
+  $(".project-prev, .project-next").on("click", function () {
+    const $arrow = $(this);
+    const $centerTile = projectSlider.find(".owl-item.center");
+
+    // Check if arrow is inside the center tile
+    if ($centerTile.has($arrow).length > 0) {
+      projectSlider.trigger("stop.owl.autoplay");
+    }
+
+    // Move carousel
+    if ($arrow.hasClass("project-prev")) {
+      projectSlider.trigger("prev.owl.carousel");
     } else {
-      projectSlider.trigger('next.owl.carousel');
+      projectSlider.trigger("next.owl.carousel");
     }
   });
+
+  // Stop autoplay on clicking PDF links
+  $("#project-slider").on("click", '.project-card a[href$=".pdf"]', function () {
+    projectSlider.trigger("stop.owl.autoplay");
+  });
 });
+
+

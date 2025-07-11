@@ -641,12 +641,13 @@ a:hover{
   align-items: stretch;
   display: flex;
 }
-
 /* Center card effect */
 #project-slider .owl-item.center .project-card {
   transform: perspective(1000px) rotateY(0deg) scale(1.05);
   z-index: 2;
   box-shadow: 0 0 15px rgba(144, 81, 227, 0.6);
+  filter: none;
+  opacity: 1;
 }
 
 /* Side card effects */
@@ -658,21 +659,15 @@ a:hover{
   transform: perspective(1000px) rotateY(6deg) scale(0.95);
 }
 
-#project-slider .owl-item:not(.center) {
-  opacity: 0.85;
-  filter: blur(0.3px);
-}
-
 #project-slider .owl-item:not(.center) .project-card {
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  filter: blur(0.6px);  /* ✅ Stronger for visible effect */
+  opacity: 0.85;
+  transition: transform 0.4s ease, filter 0.4s ease, opacity 0.4s ease;
 }
 
 /* Slider Layout */
 #project-slider .owl-stage-outer {
   padding: 0 !important;
-}
-
-#project-slider .owl-stage-outer {
   overflow: visible;
 }
 
@@ -814,7 +809,7 @@ a:hover{
   display: flex;
   justify-content: space-between;
   transform: translateY(-50%);
-  padding: 0 20rem;
+  padding: 0 9rem;
   overflow: visible;
 }
 
