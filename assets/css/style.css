@@ -641,7 +641,7 @@ a:hover{
   align-items: stretch;
   display: flex;
 }
-/* Center card effect */
+/* Center card — sharp, zoomed */
 #project-slider .owl-item.center .project-card {
   transform: perspective(1000px) rotateY(0deg) scale(1.05);
   z-index: 2;
@@ -650,17 +650,17 @@ a:hover{
   opacity: 1;
 }
 
-/* Side card effects */
-#project-slider .owl-item.left-item:not(.center) .project-card {
+/* Side card effects — blurred & tilted */
+#project-slider .owl-item.left-item .project-card {
   transform: perspective(1000px) rotateY(-6deg) scale(0.95);
+  filter: blur(0.6px);
+  opacity: 0.85;
+  transition: transform 0.4s ease, filter 0.4s ease, opacity 0.4s ease;
 }
 
-#project-slider .owl-item.right-item:not(.center) .project-card {
+#project-slider .owl-item.right-item .project-card {
   transform: perspective(1000px) rotateY(6deg) scale(0.95);
-}
-
-#project-slider .owl-item:not(.center) .project-card {
-  filter: blur(0.6px);  /* ✅ Stronger for visible effect */
+  filter: blur(0.6px);
   opacity: 0.85;
   transition: transform 0.4s ease, filter 0.4s ease, opacity 0.4s ease;
 }

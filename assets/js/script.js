@@ -55,7 +55,18 @@ function scrollToTop(){
 $(document).ready(function () {
   const projectSlider = $("#project-slider");
 
-  // Apply tilt classes on init
+  let isHovered = false;
+  let isModalOpen = false;
+
+  function updateAutoplayState() {
+    if (isHovered || isModalOpen) {
+      projectSlider.trigger("stop.owl.autoplay");
+    } else {
+      projectSlider.trigger("play.owl.autoplay");
+    }
+  }
+
+  // Initialize carousel
   projectSlider.on("initialized.owl.carousel", function (event) {
     const $items = $(this).find(".owl-item");
     const centerIndex = $items.index($items.filter(".center"));
@@ -68,9 +79,10 @@ $(document).ready(function () {
         $(this).addClass("right-item");
       }
     });
+
+    updateAutoplayState(); // initial check
   });
 
-  // Initialize Owl Carousel
   projectSlider.owlCarousel({
     items: 3,
     loop: true,
@@ -79,15 +91,15 @@ $(document).ready(function () {
     nav: false,
     autoplay: true,
     autoplayTimeout: 3000,
-    autoplayHoverPause: true,
+    autoplayHoverPause: false, // we're handling this manually
     responsive: {
       0: { items: 1 },
       768: { items: 2 },
-      992: { items: 3 }
-    }
+      992: { items: 3 },
+    },
   });
 
-  // Apply tilt classes on slide change
+  // Update left/right class on carousel change
   projectSlider.on("changed.owl.carousel", function (event) {
     const $items = $(this).find(".owl-item");
     const centerIndex = event.item.index + Math.floor(event.page.size / 2);
@@ -100,30 +112,40 @@ $(document).ready(function () {
         $(this).addClass("right-item");
       }
     });
+
+    updateAutoplayState(); // recheck after slide change
   });
 
-  // Stop autoplay if arrow is clicked inside center tile
+  // Detect hover on center tile
+  projectSlider.on("mouseenter", ".owl-item.center", function () {
+    isHovered = true;
+    updateAutoplayState();
+  });
+
+  projectSlider.on("mouseleave", ".owl-item.center", function () {
+    isHovered = false;
+    updateAutoplayState();
+  });
+
+  // Manual nav click pauses autoplay
   $(".project-prev, .project-next").on("click", function () {
-    const $arrow = $(this);
-    const $centerTile = projectSlider.find(".owl-item.center");
-
-    // Check if arrow is inside the center tile
-    if ($centerTile.has($arrow).length > 0) {
-      projectSlider.trigger("stop.owl.autoplay");
-    }
-
-    // Move carousel
-    if ($arrow.hasClass("project-prev")) {
+    isHovered = true;
+    updateAutoplayState();
+    if ($(this).hasClass("project-prev")) {
       projectSlider.trigger("prev.owl.carousel");
     } else {
       projectSlider.trigger("next.owl.carousel");
     }
   });
 
-  // Stop autoplay on clicking PDF links
-  $("#project-slider").on("click", '.project-card a[href$=".pdf"]', function () {
-    projectSlider.trigger("stop.owl.autoplay");
+  // Detect modal (PDF) open/close
+  $(".modal").on("show.bs.modal", function () {
+    isModalOpen = true;
+    updateAutoplayState();
+  });
+
+  $(".modal").on("hidden.bs.modal", function () {
+    isModalOpen = false;
+    updateAutoplayState();
   });
 });
-
-
