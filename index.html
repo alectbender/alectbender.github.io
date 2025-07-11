@@ -449,19 +449,41 @@
                     <p class="stacks m-0">Python | Tcl | Pandas | JSON</p>
                 </div>
                 <div class="col-3 align-middle">
-                    <button type="button" class="btn btn-sm primary-bg-btn rounded-5" data-bs-toggle="modal" data-bs-target="#PDMetricsModal">
+                    <!-- Desktop Modal Button -->
+                    <button type="button" class="btn btn-sm primary-bg-btn rounded-5 d-none d-md-inline"
+                    data-bs-toggle="modal" data-bs-target="#PDMetricsModal">
                     <i class="bi bi-file-earmark-text"></i> PDF
                     </button>
+
+                    <!-- Mobile Direct Link Button -->
+                    <a href="assets/images/projects/DevOps_Projects.pdf"
+                    target="_blank" rel="noopener"
+                    class="btn btn-sm primary-bg-btn rounded-5 d-inline d-md-none">
+                    <i class="bi bi-file-earmark-text"></i> PDF
+                    </a>
                 </div>
                 </div>
             </div>
+
             <div class="description-container">
-                <p class="description">An intuitive DevOps dashboard that automates and visualizes PD CI metrics, replacing 80+ pages of manual spreadsheets with clear, configurable summaries and Slack integration.</p>
+                <p class="description">
+                An intuitive DevOps dashboard that automates and visualizes PD CI metrics,
+                replacing 80+ pages of manual spreadsheets with clear, configurable summaries and Slack integration.
+                </p>
             </div>
-            <div class="banner-container" role="button" data-bs-toggle="modal" data-bs-target="#PDMetricsModal">
+
+            <!-- Banner: Modal on desktop, link on mobile -->
+            <div class="banner-container"
+                role="button"
+                data-bs-toggle="modal"
+                data-bs-target="#PDMetricsModal"
+                onclick="if (window.innerWidth < 768) {
+                window.open('assets/images/projects/DevOps_Projects.pdf', '_blank');
+                }">
                 <img src="assets/images/projects/DevOps_preview.webp" class="card-img-top banner" alt="PD Metrics PDF Preview">
             </div>
             </div>
+
 
             <div class="card project-card">
             <div class="card-body">
