@@ -421,7 +421,7 @@ a:hover{
     background-size: contain;
     background-position: bottom;
     background-repeat: no-repeat;
-    background-image: url(/assets/images/portrait.png);
+    background-image: url(/assets/images/portrait.webp);
 }
 
 @media (max-width: 576px) {
@@ -431,28 +431,29 @@ a:hover{
 
     .hero-portrait {
         position: relative;
-        overflow: hidden;
         width: 100%;
         max-width: 170px;
         height: 170px;
-        max-height: 170px;
         margin: 0 auto;
         border: solid 3px transparent;
         border-radius: 50%;
-        background-image: var(--primary-gradient-color), radial-gradient(circle at top left, var(--primary-color),var(--secondary-color));;
+        overflow: hidden;
+        background: var(--primary-gradient-color), radial-gradient(circle at top left, var(--primary-color), var(--secondary-color));
         background-origin: border-box;
         background-clip: content-box, border-box;
     }
 
     .hero-portrait .pic {
         width: 100%;
+        height: 100%;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        background-image: url(assets/images/portrait.webp);
+        background-image: url('/assets/images/portrait.webp');
+        border-radius: 50%;
     }
 
-    .hero-content{
+    .hero-content {
         margin-top: 35px;
     }
 
@@ -465,15 +466,16 @@ a:hover{
         letter-spacing: 1.2px;
     }
 
-    #hero .social-icons a{
+    #hero .social-icons a {
         font-size: 14px;
-        padding: 0px 5px 0px 5px;
+        padding: 0px 5px;
     }
 
-    #hero .call-to-action{
+    #hero .call-to-action {
         margin-top: 0px;
     }
 }
+
 
 /*--------------------------------------------------------------
 # About Section
