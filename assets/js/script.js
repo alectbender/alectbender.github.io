@@ -52,17 +52,29 @@ function scrollToTop(){
     document.documentElement.scrollTop = 0;
 }
 
-
 $(document).ready(function(){
   const projectSlider = $("#project-slider");
 
-  // Initialize the carousel
+  projectSlider.on('initialized.owl.carousel', function(event) {
+    const $items = $(this).find('.owl-item');
+    const centerIndex = $items.index($items.filter('.center'));
+
+    $items.removeClass('left-item right-item');
+    $items.each(function(i) {
+      if (i < centerIndex) {
+        $(this).addClass('left-item');
+      } else if (i > centerIndex) {
+        $(this).addClass('right-item');
+      }
+    });
+  });
+
   projectSlider.owlCarousel({
     items: 3,
     loop: true,
     center: true,
     margin: 32,
-    nav: false, // nav false because you are using custom arrows
+    nav: false,
     autoplay: true,
     autoplayTimeout: 3000,
     autoplayHoverPause: true,
@@ -73,24 +85,22 @@ $(document).ready(function(){
     }
   });
 
-  // Rotation logic
   projectSlider.on('changed.owl.carousel', function(event) {
-    $('.owl-item').removeClass('left-item right-item');
+    const $items = $(this).find('.owl-item');
+    const centerIndex = event.item.index + Math.floor(event.page.size / 2);
 
-    const center = event.item.index + Math.floor(event.page.size / 2);
-    $('.owl-item').each(function(index) {
-      if (index < center) {
+    $items.removeClass('left-item right-item');
+    $items.each(function(index) {
+      if (index < centerIndex) {
         $(this).addClass('left-item');
-      } else if (index > center) {
+      } else if (index > centerIndex) {
         $(this).addClass('right-item');
       }
     });
   });
 
-  // ⛔ Stop autoplay on arrow click
   $('.project-prev, .project-next').on('click', function() {
     projectSlider.trigger('stop.owl.autoplay');
-    // Then move carousel
     if ($(this).hasClass('project-prev')) {
       projectSlider.trigger('prev.owl.carousel');
     } else {
@@ -98,9 +108,3 @@ $(document).ready(function(){
     }
   });
 });
-
-
-
-
-
-
