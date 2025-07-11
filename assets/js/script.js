@@ -80,7 +80,7 @@ $(document).ready(function () {
       }
     });
 
-    updateAutoplayState(); // initial check
+    updateAutoplayState(); 
   });
 
   projectSlider.owlCarousel({
@@ -91,7 +91,7 @@ $(document).ready(function () {
     nav: false,
     autoplay: true,
     autoplayTimeout: 3000,
-    autoplayHoverPause: false, // we're handling this manually
+    autoplayHoverPause: false,
     responsive: {
       0: { items: 1 },
       768: { items: 2 },
