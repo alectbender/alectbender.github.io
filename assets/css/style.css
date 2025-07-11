@@ -488,44 +488,6 @@ a:hover{
     align-items: center;
 }
 
-.about-portrait::before {
-    content: "";
-    background-color: transparent;
-    height: 300px;
-    width: 300px;
-    position: absolute;
-    z-index: -2;
-    box-shadow: 2px 2px 0px inset var(--primary-color), -2px -2px 0px inset transparent;
-    -webkit-box-shadow: 2px 2px 0px inset var(--primary-color), -2px -2px 0px inset transparent;
-    transition-duration: .5s;
-    -webkit-transition-duration: .5s;
-}
-
-.about-portrait:hover::before {
-    transform: translate(-23px,-23px);
-    transition-duration: .5s;
-    -webkit-transition-duration: .5s;
-}
-
-.about-portrait::after {
-    content: "";
-    background-color: transparent;
-    height: 300px;
-    width: 300px;
-    position: absolute;
-    z-index: -2;
-    box-shadow: 2px 2px 0px inset transparent, -2px -2px 0px inset var(--primary-color);
-    -webkit-box-shadow: 2px 2px 0px inset transparent, -2px -2px 0px inset var(--primary-color);
-    transition-duration: .5s;
-    -webkit-transition-duration: .5s;
-}
-
-.about-portrait:hover::after {
-    transform: translate(35px,30px);
-    transition-duration: .5s;
-    -webkit-transition-duration: .5s;
-}
-
 .about-portrait .pic{
     width: 70%;
     height: auto;
@@ -557,17 +519,25 @@ a:hover{
     }
 
 .bio-list {
-    color: var(--text-color);
-    font-size: 15px;
-    word-spacing: 5px;
-    list-style-type: disc;
-    padding-left: 1.2rem;
-    margin-top: 30px;
+  color: var(--text-color);
+  font-size: 0.95rem; 
+  font-weight: 300;
+  line-height: 1.6;
+  padding-left: 1.2rem;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; 
+  justify-content: flex-start;
+  text-align: left;
 }
 
 .bio-list li {
-    margin-bottom: 1rem;
+  list-style-type: disc;
+  margin-bottom: 0;
+  padding-left: 0;
 }
+
 
 /*--------------------------------------------------------------
 # Experience Section
@@ -642,7 +612,7 @@ a:hover{
 --------------------------------------------------------------*/
 
 #projects {
-  position: relative; /* ⬅️ allow absolutely positioned children */
+  position: relative; 
   padding: 100px 0 80px 0;
   min-height: 100vh;
   background-size: contain;
@@ -650,9 +620,9 @@ a:hover{
 }
 
 #projects .container {
-  position: relative;   /* ⬅️ anchors .project-controls */
-  overflow: visible;    /* ⬅️ allow arrows to overflow */
-  z-index: 1;           /* ⬅️ make sure it stacks properly */
+  position: relative; 
+  overflow: visible;
+  z-index: 1;   
 }
 
 /* Project Card Core */
@@ -665,8 +635,8 @@ a:hover{
   box-shadow: 0 0 1px rgba(144, 81, 227, 0.5), 0 0 0.5px 0.5px rgba(141, 53, 229, 0.336);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   width: 340px;
-  height: auto;         /* ✅ Allow natural height */
-  max-height: none;     /* ✅ Remove height limits */
+  height: auto;     
+  max-height: none;   
   justify-content: center;
   align-items: stretch;
   display: flex;
@@ -699,16 +669,16 @@ a:hover{
 
 /* Slider Layout */
 #project-slider .owl-stage-outer {
-  padding: 0 !important;  /* ✅ remove internal padding */
+  padding: 0 !important;
 }
 
 #project-slider .owl-stage-outer {
-  overflow: visible;       /* ✅ cut off any overflow */
+  overflow: visible;
 }
 
 #project-slider .owl-stage {
   display: flex;
-  align-items: center; /* ✅ Center tiles vertically */
+  align-items: center;
   transform-style: preserve-3d;
   perspective: 1000px;
 }
@@ -716,7 +686,7 @@ a:hover{
 #project-slider .owl-item {
   display: flex;
   justify-content: center;
-  align-items: center; /* ✅ Center tile content vertically */
+  align-items: center;
   padding: 0 1rem;
 }
 
@@ -726,15 +696,15 @@ a:hover{
   padding: 100px 0 80px 0;
   min-height: 100vh;
   background-size: contain;
-  overflow-x: hidden; /* This is OK */
+  overflow-x: hidden;
 }
 
 #projects .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
-  overflow: hidden;     /* Allow arrows to overflow */
-  position: relative;    /* Needed for absolutely positioned arrows */
+  overflow: hidden;   
+  position: relative;  
 }
 
 /* Typography */
@@ -839,7 +809,7 @@ a:hover{
   top: 45%;
   left: 0;
   right: 0;
-  z-index: 100;  /* ⬅️ Bring to front */
+  z-index: 100;
   pointer-events: none;
   display: flex;
   justify-content: space-between;
