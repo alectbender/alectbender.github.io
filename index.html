@@ -449,13 +449,11 @@
                     <p class="stacks m-0">Python | Tcl | Pandas | JSON</p>
                 </div>
                 <div class="col-3 align-middle">
-                    <!-- Desktop Modal Button -->
                     <button type="button" class="btn btn-sm primary-bg-btn rounded-5 d-none d-md-inline"
                     data-bs-toggle="modal" data-bs-target="#PDMetricsModal">
                     <i class="bi bi-file-earmark-text"></i> PDF
                     </button>
 
-                    <!-- Mobile Direct Link Button -->
                     <a href="assets/images/projects/DevOps_Projects.pdf"
                     target="_blank" rel="noopener"
                     class="btn btn-sm primary-bg-btn rounded-5 d-inline d-md-none">
@@ -472,14 +470,16 @@
                 </p>
             </div>
 
-            <!-- Banner: Modal on desktop, link on mobile -->
             <div class="banner-container"
-                role="button"
-                data-bs-toggle="modal"
-                data-bs-target="#PDMetricsModal"
-                onclick="if (window.innerWidth < 768) {
-                window.open('assets/images/projects/DevOps_Projects.pdf', '_blank');
-                }">
+            role="button"
+            onclick="
+                if (window.innerWidth < 768) {
+                    window.open('assets/images/projects/DevOps_Projects.pdf', '_blank');
+                } else {
+                    const modal = new bootstrap.Modal(document.getElementById('PDMetricsModal'));
+                    modal.show();
+                }
+            ">
                 <img src="assets/images/projects/DevOps_preview.webp" class="card-img-top banner" alt="PD Metrics PDF Preview">
             </div>
             </div>
@@ -496,16 +496,33 @@
                     <p class="stacks m-0">Cadence | SystemVerilog | Tcl</p>
                 </div>
                 <div class="col-3 align-middle">
-                    <button type="button" class="btn btn-sm primary-bg-btn rounded-5" data-bs-toggle="modal" data-bs-target="#PixelModal">
+                    <button type="button" class="btn btn-sm primary-bg-btn rounded-5 d-none d-md-inline"
+                    data-bs-toggle="modal" data-bs-target="#PixelModal">
                     <i class="bi bi-file-earmark-text"></i> PDF
                     </button>
+
+                    <a href="assets/images/projects/Pixel_Simulator_Project.pdf"
+                    target="_blank" rel="noopener"
+                    class="btn btn-sm primary-bg-btn rounded-5 d-inline d-md-none">
+                    <i class="bi bi-file-earmark-text"></i> PDF
+                    </a>
                 </div>
                 </div>
             </div>
             <div class="description-container">
                 <p class="description">Taped out a 1×1 mm 65nm TSMC mixed-signal image sensor in TSMC 65nm, featuring a modular 5×3 pixel array, custom bias network, and scan chains—demonstrating full DRC/LVS compliance and post-layout simulation functionality for IoT vision systems.</p>
             </div>
-            <div class="banner-container" role="button" data-bs-toggle="modal" data-bs-target="#PixelModal">
+
+             <div class="banner-container"
+            role="button"
+            onclick="
+                if (window.innerWidth < 768) {
+                    window.open('assets/images/projects/Pixel_Simulator_Project.pdf', '_blank');
+                } else {
+                    const modal = new bootstrap.Modal(document.getElementById('PixelModal'));
+                    modal.show();
+                }
+            ">
                 <img src="assets/images/projects/Pixel_Simulator_Preview.webp" class="card-img-top banner" alt="ASIC Pixel Simulator PDF Preview">
             </div>
             </div>
@@ -521,16 +538,32 @@
                     <p class="stacks m-0">SolidWorks | Lasercutting</p>
                 </div>
                 <div class="col-3 align-middle">
-                    <button type="button" class="btn btn-sm primary-bg-btn rounded-5" data-bs-toggle="modal" data-bs-target="#AvatarModal">
+                    <button type="button" class="btn btn-sm primary-bg-btn rounded-5 d-none d-md-inline"
+                    data-bs-toggle="modal" data-bs-target="#AvatarModal">
                     <i class="bi bi-file-earmark-text"></i> PDF
                     </button>
+
+                    <a href="assets/images/projects/Avatar_Bow_Project.pdf"
+                    target="_blank" rel="noopener"
+                    class="btn btn-sm primary-bg-btn rounded-5 d-inline d-md-none">
+                    <i class="bi bi-file-earmark-text"></i> PDF
+                    </a>
                 </div>
                 </div>
             </div>
             <div class="description-container">
                 <p class="description">Designed and built a 40% scale, laser-cut replica of the Avatar Tsko A'eoio bow for a VR archery game, featuring layered wood limbs, etched leather grip, and modular acrylic feathers for durability and repairability.</p>
             </div>
-            <div class="banner-container" role="button" data-bs-toggle="modal" data-bs-target="#AvatarModal">
+            <div class="banner-container"
+            role="button"
+            onclick="
+                if (window.innerWidth < 768) {
+                    window.open('assets/images/projects/Avatar_Bow_Project.pdf', '_blank');
+                } else {
+                    const modal = new bootstrap.Modal(document.getElementById('AvatarModal'));
+                    modal.show();
+                }
+            ">
                 <img src="assets/images/projects/Avatar_Bow_Porject_Preview.webp" class="card-img-top banner" alt="Avatar Bow PDF Preview">
             </div>
             </div>
@@ -546,18 +579,34 @@
                             <p class="stacks m-0">Cadence | Tcl | CTS</p>
                         </div>
                         <div class="col-3 align-middle">
-                            <button type="button" class="btn btn-sm primary-bg-btn rounded-5" data-bs-toggle="modal" data-bs-target="#PDTimingModal">
-                                <i class="bi bi-file-earmark-text"></i> PDF
+                            <button type="button" class="btn btn-sm primary-bg-btn rounded-5 d-none d-md-inline"
+                            data-bs-toggle="modal" data-bs-target="#PDTimingModal">
+                            <i class="bi bi-file-earmark-text"></i> PDF
                             </button>
+
+                            <a href="assets/images/projects/PD_Timing_Project.pdf"
+                            target="_blank" rel="noopener"
+                            class="btn btn-sm primary-bg-btn rounded-5 d-inline d-md-none">
+                            <i class="bi bi-file-earmark-text"></i> PDF
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="description-container">
                     <p class="description">An in-depth exploration and optimization of clock tree topologies in IBM microprocessors, leveraging new FO2/FO4 configurations and Spider2 routing to reduce power and improve timing metrics under strict design constraints.</p>
                 </div>
-                <div class="banner-container" role="button" data-bs-toggle="modal" data-bs-target="#PDTimingModal">
-                    <img src="assets/images/projects/PDTiming_Project_Preview.webp" class="card-img-top banner" alt="Clock Topology PDF Preview">
-                </div>
+            <div class="banner-container"
+            role="button"
+            onclick="
+                if (window.innerWidth < 768) {
+                    window.open('assets/images/projects/PD_Timing_Project.pdf', '_blank');
+                } else {
+                    const modal = new bootstrap.Modal(document.getElementById('PDTimingModal'));
+                    modal.show();
+                }
+            ">
+                <img src="assets/images/projects/PDTiming_Project_Preview.webp" class="card-img-top banner" alt="Clock Topology PDF Preview">
+            </div>
             </div>
 
             <div class="card project-card">
@@ -571,18 +620,34 @@
                             <p class="stacks m-0">Cadence</p>
                         </div>
                         <div class="col-3 align-middle">
-                            <button type="button" class="btn btn-sm primary-bg-btn rounded-5" data-bs-toggle="modal" data-bs-target="#SRAMModal">
-                                <i class="bi bi-file-earmark-text"></i> PDF
+                            <button type="button" class="btn btn-sm primary-bg-btn rounded-5 d-none d-md-inline"
+                            data-bs-toggle="modal" data-bs-target="#SRAMModal">
+                            <i class="bi bi-file-earmark-text"></i> PDF
                             </button>
+
+                            <a href="assets/images/projects/SRAM_Final_Project.pdf"
+                            target="_blank" rel="noopener"
+                            class="btn btn-sm primary-bg-btn rounded-5 d-inline d-md-none">
+                            <i class="bi bi-file-earmark-text"></i> PDF
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="description-container">
                     <p class="description">Developed a fully functional 6T SRAM in 28nm TSMC with DRC/LVS clean layout, verified timing closure, and integrated scan-based read/write verification across multiple instances.</p>
                 </div>
-                <div class="banner-container" role="button" data-bs-toggle="modal" data-bs-target="#SRAMModal">
-                    <img src="assets/images/projects/SRAM_Preview.webp" class="card-img-top banner" alt="SRAM PDF Preview">
-                </div>
+            <div class="banner-container"
+            role="button"
+            onclick="
+                if (window.innerWidth < 768) {
+                    window.open('assets/images/projects/SRAM_Final_Project.pdf', '_blank');
+                } else {
+                    const modal = new bootstrap.Modal(document.getElementById('SRAMModal'));
+                    modal.show();
+                }
+            ">
+                <img src="assets/images/projects/SRAM_Preview.webp" class="card-img-top banner" alt="SRAM PDF Preview">
+            </div>
             </div>
 
                         <div class="card project-card">
@@ -596,18 +661,34 @@
                             <p class="stacks m-0">C | Python | Go | PyTorch | Pandas</p>
                         </div>
                         <div class="col-3 align-middle">
-                            <button type="button" class="btn btn-sm primary-bg-btn rounded-5" data-bs-toggle="modal" data-bs-target="#SkyrmionModal">
-                                <i class="bi bi-file-earmark-text"></i> PDF
+                            <button type="button" class="btn btn-sm primary-bg-btn rounded-5 d-none d-md-inline"
+                            data-bs-toggle="modal" data-bs-target="#SkyrmionModal">
+                            <i class="bi bi-file-earmark-text"></i> PDF
                             </button>
+
+                            <a href="assets/images/projects/Skyrmion_NN_Project.pdf"
+                            target="_blank" rel="noopener"
+                            class="btn btn-sm primary-bg-btn rounded-5 d-inline d-md-none">
+                            <i class="bi bi-file-earmark-text"></i> PDF
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="description-container">
                     <p class="description">I built a supervised convolutional neural network (CNN) to automatically detect and segment magnetic bubble domains from high-resolution Lorentz TEM images. Starting from raw image data, I labeled domain regions, processed the dataset, and trained the network to distinguish bubbles from background noise with high accuracy—enabling fast, automated analysis that would otherwise require labor-intensive manual inspection.</p>
                 </div>
-                <div class="banner-container" role="button" data-bs-toggle="modal" data-bs-target="#SkyrmionModal">
-                    <img src="assets/images/projects/Segmentation_Project_Preview.webp" class="card-img-top banner" alt="Skyrmion Segmentation CNN PDF Preview">
-                </div>
+            <div class="banner-container"
+            role="button"
+            onclick="
+                if (window.innerWidth < 768) {
+                    window.open('assets/images/projects/Skyrmion_NN_Project.pdf', '_blank');
+                } else {
+                    const modal = new bootstrap.Modal(document.getElementById('SkyrmionModal'));
+                    modal.show();
+                }
+            ">
+                <img src="assets/images/projects/Segmentation_Project_Preview.webp" class="card-img-top banner" alt="Skyrmion Segmentation CNN PDF Preview">
+            </div>
             </div>
 
             <div class="card project-card">
@@ -621,18 +702,34 @@
                             <p class="stacks m-0">Cadence | SystemVerilog | Tcl</p>
                         </div>
                         <div class="col-3 align-middle">
-                            <button type="button" class="btn btn-sm primary-bg-btn rounded-5" data-bs-toggle="modal" data-bs-target="#CapstoneModal">
-                                <i class="bi bi-file-earmark-text"></i> PDF
+                                <button type="button" class="btn btn-sm primary-bg-btn rounded-5 d-none d-md-inline"
+                            data-bs-toggle="modal" data-bs-target="#CapstoneModal">
+                            <i class="bi bi-file-earmark-text"></i> PDF
                             </button>
+
+                            <a href="assets/images/projects/Modulation_Recognition_Acceleration_Report.pdf"
+                            target="_blank" rel="noopener"
+                            class="btn btn-sm primary-bg-btn rounded-5 d-inline d-md-none">
+                            <i class="bi bi-file-earmark-text"></i> PDF
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="description-container">
                     <p class="description">Taped out a 1×1 mm 28nm ASIC integrating a ResNet accelerator and RISC-V CPU for real-time radio signal classification—delivering over 73× speedup compared to the FPGA baseline—with an extended 2×1.25 mm version integrating a Strip Spectral Correlation Analyzer for full spectral analysis.</p>
                 </div>
-                <div class="banner-container" role="button" data-bs-toggle="modal" data-bs-target="#CapstoneModal">
-                    <img src="assets/images/projects/Capstone_Preview.webp" class="card-img-top banner" alt="ASIC Modulation Recognition PDF Preview">
-                </div>
+            <div class="banner-container"
+            role="button"
+            onclick="
+                if (window.innerWidth < 768) {
+                    window.open('assets/images/projects/Modulation_Recognition_Acceleration_Report.pdf', '_blank');
+                } else {
+                    const modal = new bootstrap.Modal(document.getElementById('CapstoneModal'));
+                    modal.show();
+                }
+            ">
+                <img src="assets/images/projects/Capstone_Preview.webp" class="card-img-top banner" alt="ASIC Modulation Recognition PDF Preview">
+            </div>
             </div>
 
             <div class="card project-card">
@@ -646,18 +743,34 @@
                             <p class="stacks m-0">Lithography | Oscilloscope</p>
                         </div>
                         <div class="col-3 align-middle">
-                            <button type="button" class="btn btn-sm primary-bg-btn rounded-5" data-bs-toggle="modal" data-bs-target="#GateStackModal">
-                                <i class="bi bi-file-earmark-text"></i> PDF
+                            <button type="button" class="btn btn-sm primary-bg-btn rounded-5 d-none d-md-inline"
+                            data-bs-toggle="modal" data-bs-target="#GateStackModal">
+                            <i class="bi bi-file-earmark-text"></i> PDF
                             </button>
+
+                            <a href="assets/images/projects/Gate_Stack_Project.pdf"
+                            target="_blank" rel="noopener"
+                            class="btn btn-sm primary-bg-btn rounded-5 d-inline d-md-none">
+                            <i class="bi bi-file-earmark-text"></i> PDF
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="description-container">
                     <p class="description">Engineered a novel aluminum gate stack alternative to polysilicon, pushing the boundaries of cleanroom process integration. Through strategic oxide growth, contamination control, and electrical testing, this demo uncovered critical scaling limits—and paved the way for next-gen PECVD and sputtered gate dielectrics.</p>
                 </div>
-                <div class="banner-container" role="button" data-bs-toggle="modal" data-bs-target="#GateStackModal">
-                    <img src="assets/images/projects/Gate_Stack_Project_Preview.webp" class="card-img-top banner" alt="Gate Stack PDF Preview">
-                </div>
+            <div class="banner-container"
+            role="button"
+            onclick="
+                if (window.innerWidth < 768) {
+                    window.open('assets/images/projects/Gate_Stack_Project.pdf', '_blank');
+                } else {
+                    const modal = new bootstrap.Modal(document.getElementById('GateStackModal'));
+                    modal.show();
+                }
+            ">
+                 <img src="assets/images/projects/Gate_Stack_Project_Preview.webp" class="card-img-top banner" alt="Gate Stack PDF Preview">
+            </div>
             </div>
         </div>
         </div>
