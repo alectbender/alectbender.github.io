@@ -289,6 +289,26 @@
     </section>
             
     <!-- Project Modal -->
+     <div class="modal fade" id="L3CacheModal" tabindex="-1" aria-labelledby="L3CacheModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered" style="height: 90vh;">
+            <div class="modal-content" style="height: 100%;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="L3CacheLabel">L3 Cache Integration</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0" style="height: calc(100% - 56px);">
+                  <iframe
+                    src="assets/images/projects/L3_Cache_Integration_Project.pdf"
+                    width="100%"
+                    height="100%"
+                    loading="lazy"
+                    title="L3 Cache Integration"
+                ></iframe>
+            </div>
+            </div>
+        </div>
+    </div>
+
     <div class="modal fade" id="PDMetricsModal" tabindex="-1" aria-labelledby="PDMetricsModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered" style="height: 90vh;">
             <div class="modal-content" style="height: 100%;">
@@ -465,6 +485,51 @@
                     <img src="assets/images/projects/IBM.png" class="img-fluid icon" alt="IBM Logo">
                 </div>
                 <div class="col-7 p-0">
+                    <a class="card-title title" target="_blank">L3 Cache Integration</a>
+                    <p class="stacks m-0">Cadence | Python | RTL-to-GDSII Flow</p>
+                </div>
+                <div class="col-3 align-middle">
+                    <button type="button" class="btn btn-sm primary-bg-btn rounded-5 d-none d-md-inline"
+                    data-bs-toggle="modal" data-bs-target="#PDMetricsModal">
+                    <i class="bi bi-file-earmark-text"></i> PDF
+                    </button>
+
+                    <a href="assets/images/projects/L3_Cache_Integration_Project.pdf"
+                    target="_blank" rel="noopener"
+                    class="btn btn-sm primary-bg-btn rounded-5 d-inline d-md-none">
+                    <i class="bi bi-file-earmark-text"></i> PDF
+                    </a>
+                </div>
+                </div>
+            </div>
+
+            <div class="description-container">
+                <p class="description">
+                Optimized L3 cache integration for IBM z18 (Samsung 3nm) by advancing custom RTL-to-GDSII flow stages.
+                </p>
+            </div>
+
+            <div class="banner-container"
+            role="button"
+            onclick="
+                if (window.innerWidth < 768) {
+                    window.open('assets/images/projects/L3_Cache_Integration_Project.pdf', '_blank');
+                } else {
+                    const modal = new bootstrap.Modal(document.getElementById('PDMetricsModal'));
+                    modal.show();
+                }
+            ">
+                <img src="assets/images/projects/L3_Cache_Integration_Preview.webp" class="card-img-top banner" alt="PD Metrics PDF Preview">
+            </div>
+            </div>
+
+            <div class="card project-card">
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                <div class="col-2">
+                    <img src="assets/images/projects/IBM.png" class="img-fluid icon" alt="IBM Logo">
+                </div>
+                <div class="col-7 p-0">
                     <a class="card-title title" target="_blank">PD Metrics</a>
                     <p class="stacks m-0">Python | Tcl | Pandas | JSON</p>
                 </div>
@@ -513,7 +578,7 @@
                 </div>
                 <div class="col-7 p-0">
                     <a class="card-title title" target="_blank">ASIC Pixel Simulator</a>
-                    <p class="stacks m-0">Cadence | SystemVerilog | Tcl</p>
+                    <p class="stacks m-0">Cadence | SystemVerilog | Tcl | RTL-to-GDSII Flow</p>
                 </div>
                 <div class="col-3 align-middle">
                     <button type="button" class="btn btn-sm primary-bg-btn rounded-5 d-none d-md-inline"
@@ -719,7 +784,7 @@
                         </div>
                         <div class="col-7 p-0">
                             <a class="card-title title" target="_blank">ASIC Modulation Recognition</a>
-                            <p class="stacks m-0">Cadence | SystemVerilog | Tcl</p>
+                            <p class="stacks m-0">Cadence | SystemVerilog | Tcl | RTL-to-GDSII Flow</p>
                         </div>
                         <div class="col-3 align-middle">
                                 <button type="button" class="btn btn-sm primary-bg-btn rounded-5 d-none d-md-inline"
