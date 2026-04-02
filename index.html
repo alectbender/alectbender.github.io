@@ -167,11 +167,11 @@
                 </div>
                 <div class="col-lg-7 order-lg-2 order-2 pt-lg-4">
                     <ul class="bio-list">
-                        <li>I'm Alec, a 23-year-old physical design engineer from Chicago with a passion for building high-performance hardware systems</li>
-                        <li>Currently a CPU Physical Design & Integration Intern at IBM and pursuing an M.S. in ECE at Carnegie Mellon University, where I earned dual B.S. degrees in ECE and MSE</li>
+                        <li>I'm Alec, a 24-year-old physical design engineer from Chicago with a passion for building high-performance hardware systems</li>
+                        <li>Currently a CPU Physical Design Engineer at IBM in Austin, TX and with an M.S. in ECE at Carnegie Mellon University, where I earned dual B.S. degrees in ECE and MSE</li>
+                        <li>Graduate of Carnegie Mellon University with an M.S. in ECE and earned dual B.S. degrees in ECE and MSE</li>
                         <li>I'm passionate about physical implementation—where form meets function at the nanoscale. I aim to design efficient, next-gen ASICs that push the limits of performance, power, and scalability</li>
                         <li>I want to contribute to architectures that define the future of computing</li>
-                        <li>In my free time, I'm a major American football enthusiast and part-time rowing coach</li>
                     </ul>
                 </div>
             </div>
@@ -184,6 +184,27 @@
             <h2 class="section-heading text-center">Experience</h2>
 
             <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-content">
+                        <div class="timeline-left">
+                        <h5>IBM</h5>
+                        <p class="title">CPU Physical Design Engineer</p>
+                        <p class="date">April 2026 - Present</p>
+                        </div>
+                        <div class="timeline-right">
+                        <div>
+                            <ul>
+                            <li>Own block-level physical design for z-Series L3 cache, covering floorplanning, placement, congestion, and timing closure</li>
+                            <li>Author and deploy automation tools to improve routability across z-Series and Power processor teams</li>
+                            </ul>
+                        </div>
+                        <div class="experience-skills mt-2">
+                            <strong>Skills:</strong> Cadence, Python, Tcl
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
                     <div class="timeline-content">
                         <div class="timeline-left">
@@ -201,7 +222,7 @@
                             </ul>
                         </div>
                         <div class="experience-skills mt-2">
-                            <strong>Skills:</strong> Cadence, Tcl
+                            <strong>Skills:</strong> Cadence, Python, Tcl
                         </div>
                         </div>
                     </div>
@@ -290,6 +311,26 @@
     </section>
             
     <!-- Project Modal -->
+    <div class="modal fade" id="QuantumAnnealingModal" tabindex="-1" aria-labelledby="QuantumAnnealingModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered" style="height: 90vh;">
+            <div class="modal-content" style="height: 100%;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="QuantumAnnealingLabel">Quantum Annealing</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0" style="height: calc(100% - 56px);">
+                  <iframe
+                    src="assets/images/projects/Alec_Bender_Solving_Silicon_Vacancy_Problems_by_Quantum_Annealing.pdf"
+                    width="100%"
+                    height="100%"
+                    loading="lazy"
+                    title="Solving Silicon Vacancy Problems by Quantum Annealing"
+                ></iframe>
+            </div>
+            </div>
+        </div>
+    </div>
+
      <div class="modal fade" id="L3CacheModal" tabindex="-1" aria-labelledby="L3CacheModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered" style="height: 90vh;">
             <div class="modal-content" style="height: 100%;">
@@ -478,6 +519,52 @@
     <div class="container">
         <h2 class="section-heading text-center">Projects</h2>
         <div id="project-slider" class="owl-carousel owl-theme mt-5">
+
+            <div class="card project-card">
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                <div class="col-2">
+                    <img src="assets/images/projects/cmu.png" class="img-fluid icon" alt="CMU Logo">
+                </div>
+                <div class="col-7 p-0">
+                    <a class="card-title title" target="_blank">Quantum Annealing</a>
+                    <p class="stacks m-0">Quantum Annealing | QUBO | Python</p>
+                </div>
+                <div class="col-3 align-middle">
+                    <button type="button" class="btn btn-sm primary-bg-btn rounded-5 d-none d-md-inline"
+                    data-bs-toggle="modal" data-bs-target="#QuantumAnnealingModal">
+                    <i class="bi bi-file-earmark-text"></i> PDF
+                    </button>
+
+                    <a href="assets/images/projects/Alec_Bender_Solving_Silicon_Vacancy_Problems_by_Quantum_Annealing.pdf"
+                    target="_blank" rel="noopener"
+                    class="btn btn-sm primary-bg-btn rounded-5 d-inline d-md-none">
+                    <i class="bi bi-file-earmark-text"></i> PDF
+                    </a>
+                </div>
+                </div>
+            </div>
+
+            <div class="description-container">
+                <p class="description">
+                A QUBO-based optimization framework for silicon vacancy configurations, achieving 7× speedup over exhaustive search via simulated annealing while maintaining ground-state accuracy (R² > 0.95 vs. DFT). 
+                Extended to boron-doped silicon and validated on real quantum hardware using QuEra Aquila via AWS Braket.
+                </p>
+            </div>
+
+            <div class="banner-container"
+            role="button"
+            onclick="
+                if (window.innerWidth < 768) {
+                    window.open('assets/images/projects/Alec_Bender_Solving_Silicon_Vacancy_Problems_by_Quantum_Annealing.pdf', '_blank');
+                } else {
+                    const modal = new bootstrap.Modal(document.getElementById('QuantumAnnealingModal'));
+                    modal.show();
+                }
+            ">
+                <img src="assets/images/projects/Quantum_Annealing_preview.webp" class="card-img-top banner" alt="Quantum Annealing PDF Preview">
+            </div>
+            </div>
 
             <div class="card project-card">
             <div class="card-body">
